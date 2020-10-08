@@ -115,7 +115,7 @@ function app(opts) {
       showMore: true,
       showMoreLimit: 10,
       searchable: true,
-      searchablePlaceholder: 'Search for State',
+      searchablePlaceholder: 'Search for County',
       templates: {
         searchableNoResults:
           '<div class="sffv_no-results">No matching brands.</div>',
