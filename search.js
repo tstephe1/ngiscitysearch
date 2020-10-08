@@ -79,7 +79,7 @@ function app(opts) {
     // ---------------------
     instantsearch.widgets.panel({
       templates: {
-        header: getHeaderTemplate('State'),
+        header: getHeaderTemplate('State (or)'),
       },
     })(instantsearch.widgets.refinementList)({
       container: '#state',
@@ -106,7 +106,7 @@ function app(opts) {
     }),
     instantsearch.widgets.panel({
       templates: {
-        header: getHeaderTemplate('County'),
+        header: getHeaderTemplate('County (or)'),
       },
     })(instantsearch.widgets.refinementList)({
       container: '#county',
