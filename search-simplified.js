@@ -38,15 +38,7 @@ function app(opts) {
         {
           value: opts.indexName,
           label: 'Most relevant',
-        },
-        {
-          value: `${opts.indexName}_price_asc`,
-          label: 'Lowest price',
-        },
-        {
-          value: `${opts.indexName}_price_desc`,
-          label: 'Highest price',
-        },
+        }
       ],
     }),
     instantsearch.widgets.pagination({
@@ -62,32 +54,11 @@ function app(opts) {
       },
     }),
     instantsearch.widgets.refinementList({
-      container: '#brand',
-      attribute: 'brand',
-      operator: 'or',
-      searchForFacetValues: {
-        placeholder: 'Search for brands',
-        templates: {
-          noResults: '<div class="sffv_no-results">No matching brands.</div>',
-        },
-      },
-      templates: {
-        header: getHeader('Brand'),
-      },
-    }),
-    instantsearch.widgets.rangeSlider({
-      container: '#price',
-      attribute: 'price',
-      templates: {
-        header: getHeader('Price'),
-      },
-    }),
-    instantsearch.widgets.refinementList({
       container: '#type',
-      attribute: 'type',
-      operator: 'and',
+      attribute: 'COUNTY_NAME',
+      operator: 'or',
       templates: {
-        header: getHeader('Type'),
+        header: getHeader('County'),
       },
     }),
   ]);
