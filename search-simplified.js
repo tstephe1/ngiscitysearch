@@ -55,10 +55,10 @@ function app(opts) {
     }),
     instantsearch.widgets.refinementList({
       container: '#category',
-      attribute: 'categories',
+      attribute: 'STATE_ALPHA',
       operator: 'or',
       templates: {
-        header: getHeader('Category'),
+        header: getHeader('State'),
       },
     }),
     instantsearch.widgets.refinementList({
