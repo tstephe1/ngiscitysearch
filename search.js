@@ -30,7 +30,7 @@ function app(opts) {
   search.addWidgets([
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Search for products by name, type, brand, ...',
+      placeholder: 'Search for anything',
     }),
     instantsearch.widgets.hits({
       container: '#hits',
@@ -79,33 +79,16 @@ function app(opts) {
     // ---------------------
     instantsearch.widgets.panel({
       templates: {
-        header: getHeaderTemplate('category'),
-      },
-    })(instantsearch.widgets.hierarchicalMenu)({
-      container: '#hierarchical-categories',
-      attributes: [
-        'hierarchicalCategories.lvl0',
-        'hierarchicalCategories.lvl1',
-        'hierarchicalCategories.lvl2',
-      ],
-      showParentLevel: true,
-      templates: {
-        item:
-          '<a href="{{url}}" class="facet-item {{#isRefined}}active{{/isRefined}}"><span class="facet-name"><i class="fa fa-angle-right"></i> {{label}}</span class="facet-name"><span class="ais-HierarchicalMenu-count">{{count}}</span></a>', // eslint-disable-line
-      },
-    }),
-    instantsearch.widgets.panel({
-      templates: {
-        header: getHeaderTemplate('brand'),
+        header: getHeaderTemplate('State'),
       },
     })(instantsearch.widgets.refinementList)({
-      container: '#brand',
-      attribute: 'brand',
+      container: '#state',
+      attribute: 'STATE_ALPHA',
       limit: 5,
       showMore: true,
       showMoreLimit: 10,
       searchable: true,
-      searchablePlaceholder: 'Search for brands',
+      searchablePlaceholder: 'Search for State',
       templates: {
         searchableNoResults:
           '<div class="sffv_no-results">No matching brands.</div>',
@@ -123,17 +106,31 @@ function app(opts) {
     }),
     instantsearch.widgets.panel({
       templates: {
-        header: getHeaderTemplate('price'),
+        header: getHeaderTemplate('County'),
       },
-    })(instantsearch.widgets.rangeSlider)({
-      container: '#price',
-      attribute: 'price',
-      tooltips: {
-        format(rawValue) {
-          return `$${Math.round(rawValue).toLocaleString()}`;
-        },
+    })(instantsearch.widgets.refinementList)({
+      container: '#county',
+      attribute: 'COUNTY_NAME',
+      limit: 5,
+      showMore: true,
+      showMoreLimit: 10,
+      searchable: true,
+      searchablePlaceholder: 'Search for State',
+      templates: {
+        searchableNoResults:
+          '<div class="sffv_no-results">No matching brands.</div>',
+        showMoreText: `
+          {{#isShowingMore}}
+            <span class="isShowingLess"></span>
+            Show less
+          {{/isShowingMore}}
+          {{^isShowingMore}}
+            <span class="isShowingMore"></span>
+            Show more
+          {{/isShowingMore}}
+        `,
       },
-    }),
+    }),    
     instantsearch.widgets.panel({
       templates: {
         header: getHeaderTemplate('rating'),

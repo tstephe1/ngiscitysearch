@@ -20,7 +20,7 @@ function app(opts) {
   search.addWidgets([
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Search for products',
+      placeholder: 'Search for Cities',
     }),
     instantsearch.widgets.hits({
       container: '#hits',
