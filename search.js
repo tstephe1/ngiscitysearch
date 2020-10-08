@@ -131,53 +131,7 @@ function app(opts) {
         `,
       },
     }),    
-    instantsearch.widgets.panel({
-      templates: {
-        header: getHeaderTemplate('rating'),
-      },
-    })(instantsearch.widgets.ratingMenu)({
-      container: '#stars',
-      attribute: 'rating',
-      max: 5,
-      labels: {
-        andUp: '& Up',
-      },
-    }),
-    instantsearch.widgets.panel({
-      templates: {
-        header: getHeaderTemplate('shipping'),
-      },
-    })(instantsearch.widgets.toggleRefinement)({
-      container: '#free-shipping',
-      attribute: 'free_shipping',
-      label: 'Free Shipping',
-      values: {
-        on: true,
-      },
-    }),
-    instantsearch.widgets.panel({
-      templates: {
-        header: getHeaderTemplate('type'),
-      },
-    })(instantsearch.widgets.menu)({
-      container: '#type',
-      attribute: 'type',
-      limit: 10,
-      showMore: true,
-      templates: {
-        showMoreText: `
-          {{#isShowingMore}}
-            <span class="isShowingLess"></span>
-            Show less
-          {{/isShowingMore}}
-          {{^isShowingMore}}
-            <span class="isShowingMore"></span>
-            Show more
-          {{/isShowingMore}}
-        `,
-      },
-    }),
-  ]);
+ ]);
 
   search.start();
 }
