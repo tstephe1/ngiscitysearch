@@ -3,7 +3,7 @@
 app({
   appId: '0918D9U2RE',
   apiKey: 'd25b0c5b30ab02ff3684b21f2b1292fc',
-  indexName: 'ngis',
+  indexName: 'NGIS',
   searchParameters: {
     hitsPerPage: 10,
   },
