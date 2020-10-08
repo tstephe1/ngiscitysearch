@@ -50,7 +50,7 @@ function app(opts) {
       attribute: 'STATE_ALPHA',
       operator: 'or',
       templates: {
-        header: getHeader('state'),
+        header: getHeader('category'),
       },
     }),
     instantsearch.widgets.refinementList({
@@ -58,7 +58,7 @@ function app(opts) {
       attribute: 'COUNTY_NAME',
       operator: 'or',
       templates: {
-        header: getHeader('county'),
+        header: getHeader('type'),
       },
     }),
   ]);
