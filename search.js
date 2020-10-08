@@ -1,9 +1,9 @@
 /* global instantsearch algoliasearch */
 
 app({
-  appId: 'latency',
-  apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-  indexName: 'instant_search',
+  appId: '0918D9U2RE',
+  apiKey: 'd25b0c5b30ab02ff3684b21f2b1292fc',
+  indexName: 'ngis',
   searchParameters: {
     hitsPerPage: 10,
   },
