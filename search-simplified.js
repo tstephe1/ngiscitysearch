@@ -46,19 +46,19 @@ function app(opts) {
       scrollTo: '#search-input',
     }),
     instantsearch.widgets.refinementList({
-      container: '#category',
+      container: '#state',
       attribute: 'STATE_ALPHA',
       operator: 'or',
       templates: {
-        header: getHeader('category'),
+        header: getHeader('State'),
       },
     }),
     instantsearch.widgets.refinementList({
-      container: '#type',
+      container: '#county',
       attribute: 'COUNTY_NAME',
       operator: 'or',
       templates: {
-        header: getHeader('type'),
+        header: getHeader('County'),
       },
     }),
   ]);
